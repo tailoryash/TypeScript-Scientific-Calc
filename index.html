@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript-Scientific calculator</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f82f252a4e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Output display  -->
+      <div class="display">
+        <input type="text" id="display" placeholder="0" disabled /> <br />
+        <span>Memory : </span>
+        <div id="result"></div>
+      </div>
+      <!-- 1st row  -->
+      <div class="row">
+        <button type="button" class="btn btn-deg" onclick="degree()">
+          DEG
+        </button>
+        <button type="button" class="btn btn-fe" onclick="fixedExpo()">
+          F-E
+        </button>
+      </div>
+
+      <!-- 2nd row -->
+      <div class="row">
+        <button type="button" class="btn btn-m btn-l" onclick="memoryClear()">
+          MC
+        </button>
+        <button type="button" class="btn btn-m btn-l" onclick="memoryRecall()">
+          MR
+        </button>
+        <button type="button" class="btn btn-m btn-b" onclick="memoryPlus()">
+          M+
+        </button>
+        <button type="button" class="btn btn-m btn-b" onclick="memoryMinus()">
+          M-
+        </button>
+        <button type="button" class="btn btn-m btn-b" onclick="memoryStore()">
+          MS
+        </button>
+      </div>
+
+      <!-- 3rd row -->
+      <div class="row">
+        <button type="button" class="btn-trigno">
+          <select name="trignometry" id="trigno" onchange="trignometry()">
+            <option value="trignometry" id="trig" selected disabled>
+              &#9727; Trignometry
+            </option>
+            <option value="sin">Sin(X)</option>
+            <option value="cos">Cos(X)</option>
+            <option value="tan">Tan(X)</option>
+          </select>
+        </button>
+
+        <button type="button" class="btn-func">
+          <select name="function" id="func" onchange="func()">
+            <option value="function" id="fun" selected disabled>
+              &#x192; Function
+            </option>
+            <option value="floor">floor(x)</option>
+            <option value="ceil">ceil(x)</option>
+          </select>
+        </button>
+      </div>
+
+      <!-- 4th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="showOpt(this)">
+          2<sup>x</sup>
+        </button>
+        <button type="button" class="btn" onclick="pi()">&pi;</button>
+        <button type="button" class="btn" onclick="e()">e</button>
+        <button type="button" class="btn" onclick="clearDisplay()">C</button>
+        <button type="button" class="btn" onclick="oneClear()">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+      </div>
+
+      <!-- 5th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="xpower()">
+          x<sup>2</sup>
+        </button>
+        <button type="button" class="btn" onclick="oneByNumber()">1/x</button>
+        <button type="button" class="btn" onclick="absulatevalue()">
+          | x |
+        </button>
+        <button type="button" class="btn" onclick="exponential()">exp</button>
+        <button type="button" class="btn" value="%">mod</button>
+      </div>
+
+      <!-- 6th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="sqroot()">2&radic;x</button>
+        <button type="button" class="btn" value="(">(</button>
+        <button type="button" class="btn" value=")">)</button>
+        <button type="button" class="btn" onclick="factorial()">n!</button>
+        <button type="button" class="btn btn-opr" value="/">&divide;</button>
+      </div>
+
+      <!-- 7th row -->
+      <div class="row">
+        <button type="button" class="btn" value="**">x<sup>y</sup></button>
+        <button type="button" class="btn btn-white" value="7">7</button>
+        <button type="button" class="btn btn-white" value="8">8</button>
+        <button type="button" class="btn btn-white" value="9">9</button>
+        <button type="button" class="btn btn-opr" value="*">&times;</button>
+      </div>
+
+      <!-- 8th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="powX()">
+          10<sup>x</sup>
+        </button>
+        <button type="button" class="btn btn-white" value="4">4</button>
+        <button type="button" class="btn btn-white" value="5">5</button>
+        <button type="button" class="btn btn-white" value="6">6</button>
+        <button type="button" class="btn btn-opr" value="-">&#9472;</button>
+      </div>
+
+      <!-- 9th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="log()">log</button>
+        <button type="button" class="btn btn-white" value="1">1</button>
+        <button type="button" class="btn btn-white" value="2">2</button>
+        <button type="button" class="btn btn-white" value="3">3</button>
+        <button type="button" class="btn btn-opr" value="+">&plus;</button>
+      </div>
+
+      <!-- 10th row -->
+      <div class="row">
+        <button type="button" class="btn" onclick="ln()">ln</button>
+        <button type="button" class="btn btn-white" onclick="plusMinus()">
+          +/-
+        </button>
+        <button type="button" class="btn btn-white" value="0">0</button>
+        <button type="button" class="btn btn-white" value=".">.</button>
+        <button
+          type="button"
+          class="btn btn-opr btn-equal"
+          onclick="calculate(this)"
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
