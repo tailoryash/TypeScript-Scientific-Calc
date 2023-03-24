@@ -40,7 +40,7 @@ function memoryRecall(){
 }
 
 function memoryPlus() {
-    var result = Number(localStorage.getItem(memory.toString())) + Number(display.value).toString();
+    var result = (Number(localStorage.getItem(memory.toString())) + Number(display.value)).toString();
     console.log(result);
     localStorage.setItem(memory.toString(), result);
    (document.getElementById('result') as HTMLElement).innerHTML = result;
