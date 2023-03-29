@@ -114,28 +114,28 @@ function oneClear() {
     display.value = display.value.slice(0, display.value.length - 1);
 }
 function xpower() {
-    display.value = (Math.pow(Number(display.value), 2)).toFixed(10);
+    display.value = (Math.pow(Number(display.value), 2)).toString();
 }
 function oneByNumber() {
     display.value = (1 / Number(display.value)).toFixed(10);
 }
 function absulatevalue() {
-    display.value = (Math.abs(Number(display.value))).toFixed(10);
+    display.value = (Math.abs(Number(display.value))).toString();
 }
 function exponential() {
-    display.value = (Math.exp(Number(display.value))).toFixed(10);
+    display.value = (Math.exp(Number(display.value))).toString();
 }
 function sqroot() {
-    display.value = Math.sqrt(Number(display.value)).toFixed(10);
+    display.value = Math.sqrt(Number(display.value)).toString();
 }
 function powX() {
-    display.value = Math.pow(10, Number(display.value)).toFixed(10);
+    display.value = Math.pow(10, Number(display.value)).toString();
 }
 function log() {
-    display.value = Math.log10(Number(display.value)).toFixed(10);
+    display.value = Math.log10(Number(display.value)).toString();
 }
 function ln() {
-    display.value = Math.log(Number(display.value)).toFixed(10);
+    display.value = Math.log(Number(display.value)).toString();
 }
 function factorial() {
     var i, num, f;
