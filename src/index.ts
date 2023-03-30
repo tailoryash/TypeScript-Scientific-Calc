@@ -16,7 +16,7 @@ function calculate() {
 }
 
 function degree(){
-    display.value = (parseFloat(display.value) * (180 / Math.PI)).toFixed(8);
+    display.value = (parseFloat(display.value) * (180 / Math.PI)).toFixed(10);
 } 
 
 function fixedExpo(){
@@ -75,17 +75,17 @@ function trignometry() {
 }
 
 function sin() {
-    display.value = Math.sin(parseFloat(display.value) * Math.PI / 180).toFixed(8);
+    display.value = Math.sin(parseFloat(display.value) * Math.PI / 180).toFixed(10);
     (document.getElementById("trigno") as HTMLInputElement).value ="trignometry" ;
 }
 
 function cos() {
-    display.value = Math.cos(parseFloat(display.value) * Math.PI / 180).toFixed(8);
+    display.value = Math.cos(parseFloat(display.value) * Math.PI / 180).toFixed(10);
     (document.getElementById("trigno") as HTMLInputElement).value ="trignometry" ;
 }
 
 function tan() {
-    display.value = Math.tan(parseFloat(display.value) * Math.PI / 180).toFixed(8);
+    display.value = Math.tan(parseFloat(display.value) * Math.PI / 180).toFixed(10);
     (document.getElementById("trigno") as HTMLInputElement).value ="trignometry" ;
 }
 
@@ -161,11 +161,11 @@ function powX() {
 }
 
 function log() {
-    display.value = Math.log10(Number(display.value)).toString();
+    display.value = Math.log10(Number(display.value)).toFixed(10);
 }
 
 function ln() {
-    display.value = Math.log(Number(display.value)).toString();
+    display.value = Math.log(Number(display.value)).toFixed(10);
 }
 
 function factorial() {
@@ -186,3 +186,4 @@ function plusMinus(){
 function showOpt(){
     display.value = (2 ** Number(display.value)).toString();
 }
+
